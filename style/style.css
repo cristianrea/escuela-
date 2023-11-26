@@ -4,3 +4,140 @@
     box-sizing: border-box;
     font-family: 'Open Sans',sans-serif;
 }
+body{
+height: 100vh;
+background-color: #000;
+background-image: url('https://th.bing.com/th/id/R.097215214e015d5f07388747a5f901bc?rik=TIdgiQyZYgh3TA&riu=http%3a%2f%2fwww.ich.maristas.cl%2fdata%2finfraestructura%2flaboratorios_computacion%2fmultimedia%2fimagen%2fThumbs%2flaboratorio_computacion_thumb.jpg&ehk=vfsT04vzgDekJ2ISST1HkU7KnRcaYm7Gum8idq43T28%3d&risl=&pid=ImgRaw&r=0');
+background-size:cover;
+background-position: center;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+
+}
+a:hover{
+    color:orange
+}
+
+/*HEDER*/
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo{
+    font-size: 1rem;
+    font-weight: bold;
+
+
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+
+}
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: none;
+}
+.action_btn{
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border:none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+
+}
+.action_btn:hover{
+    scale: 1.05;
+    color:#fff;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+/*Dropdown menu*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgb(255, 255, 255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown_menu.open{
+height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/*HERO*/
+section#hero{
+    height: calc(100vh - 60px);/* se toma de .dropdown_menu*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+}
+#hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+/*RESPONSIVE*/
+@media screen and (max-width:992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+}
+@media screen and (max-width:576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+
+}
