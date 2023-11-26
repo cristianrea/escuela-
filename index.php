@@ -1,56 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escuela</title>
-    <link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-    <header>
-        <div class="navbar">
-            <div class="logo"><a href="#">Escuela</a></div>
-            <ul class="links">
-                <li><a href="hero">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="service">Services</a></li>
-                <li><a href="contact">Contact</a></li>
-            </ul>
-
-            <a href="#" class ="action_btn">Iniciar Sesion</a>
-            <div class=toggle_btn>
-                <i class ="fa-regular fa-bars"></i>
-            </div>
-        </div>
-        <div class="dropdown_menu">
-        <li><a href="hero">Home</a></li>
-                <li><a href="about">About</a></li>
-                <li><a href="service">Services</a></li>
-                <li><a href="contact">Contact</a></li>
-                <li><a href="#" class ="action_btn">Iniciar Sesion</a></li>
-        </div>
-    </header>
-    <main>
-        <section id="hero">
-            <h1>
-                bienvenido
-            </h1>
-            <p>
-                Lorem, ipsum dolor sit amet ttates ducimus? <br>Tempora sequi quam voluptatibus delectus minus sed! Fugit voluptates.
-            </p>
-        </section>
-    </main>
-    <script>
-        const toggleBtn = document.querySelector('.toggle_btn');
-        const dropdownMenu = document.querySelector(".dropdown_menu");
-        const toggleBtnIcon= document.querySelector(".toggle_btn i");
-        toggleBtn.onclick=function(){
-            dropdownMenu.classList.toggle('open')
-            const isOpen =dropdownMenu.classList.contains('open')
-
-            toggleBtnIcon.classList=isOpen
-            ?'fa-solid fa-xmark':'fa-regular fa-bars';
-        }
-    </script>
-</body>
-</html>
+ 
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CCPM</title>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+     <link rel="stylesheet" href="style\style.css">
+     <script src="js/script.js" defer></script>
+ </head>
+ <body>
+     <header>
+         <nav class="navbar">
+             <span class="hamburger-btn material-symbols-rounded">menu</span>
+             <a href="#" class="logo">
+                 <img src="img/logo.jpg" alt="logo">
+                 <h2>CCPM</h2>
+             </a>
+             <ul class="links">
+                 <span class="close-btn material-symbols-rounded">x</span>
+                 <li><a href="#">INICIO</a></li>
+                 <li><a href="#">Blog</a></li>
+                 <li><a href="#">Sobre nostros</a></li>
+                 <li><a href="#">Contacto</a></li>
+             </ul>
+             <button class="login-btn">Iniciar sesion</button>
+         </nav>
+     </header>
+  
+     <div class="blur-bg-overlay"></div>
+     <div class="form-popup">
+         <span class="close-btn material-symbols-rounded">x</span>
+         <div class="form-box login">
+             <div class="form-details">
+                 <h2>Bienvenido de nuevo</h2>
+                 <p>Porfavor iniciar session</p>
+             </div>
+             <div class="form-content">
+                 <h2>LOGIN</h2>
+                 <form action="#">
+                     <div class="input-field">
+                         <input type="text" required>
+                         <label>Correo</label>
+                     </div>
+                     <div class="input-field">
+                         <input type="password" required>
+                         <label>Contraseña</label>
+                     </div>
+                     <a href="#" class="forgot-pass-link">¿olvidaste tu contraseña?</a>
+                     <button type="submit">Iniciar sesion</button>
+                 </form>
+                 <div class="bottom-link">
+                     ¿No tienes una cuenta?
+                     <a href="#" id="signup-link">Registrate</a>
+                 </div>
+             </div>
+         </div>
+         <div class="form-box signup">
+             <div class="form-details">
+                 <h2>Crear una cuenta</h2>
+                 <p> Por favor registrate aqui</p>
+             </div>
+             <div class="form-content">
+                 <h2>REGISTRATE</h2>
+                 <form action="#">
+                     <div class="input-field">
+                         <input type="text" required>
+                         <label>Ingresa tu correo electronico</label>
+                     </div>
+                     <div class="input-field">
+                         <input type="password" required>
+                         <label>Crear contraseña</label>
+                     </div>
+                     <div class="policy-text">
+                         <input type="checkbox" id="policy">
+                         <label for="policy">
+                            Estoy de acuerdo con los
+                             <a href="#" class="option">Terminos y condiciones</a>
+                         </label>
+                     </div>
+                     <button type="submit">REGISTRATE</button>
+                 </form>
+                 <div class="bottom-link">
+                     ¿Ya tienes una cuenta?
+                     <a href="#" id="login-link">INICIAR SECION</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </body>
+ </html>
